@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Jadwal Kuliah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard Jadwal Kuliah</h1>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="today">Hari Ini</div>
+            <div class="tab" data-tab="calendar">Kalender Mingguan</div>
+            <div class="tab" data-tab="manage">Kelola Jadwal</div>
+        </div>
+        
+        <div class="tab-content active" id="today">
+            <h2>Jadwal Hari Ini</h2>
+            <div id="today-schedule"></div>
+        </div>
+        
+        <div class="tab-content" id="calendar">
+            <h2>Kalender Jadwal Mingguan</h2>
+            <div class="filter-controls">
+                <label for="course-filter">Filter Mata Kuliah:</label>
+                <select id="course-filter">
+                    <option value="">Semua Mata Kuliah</option>
+                </select>
+            </div>
+            <div class="calendar" id="weekly-calendar"></div>
+        </div>
+        
+        <div class="tab-content" id="manage">
+            <h2>Kelola Jadwal Kuliah</h2>
+            <button id="add-schedule">Tambah Jadwal Baru</button>
+            <div id="schedule-list"></div>
+        </div>
+    </div>
+    
+    <div class="modal" id="class-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Detail Mata Kuliah</h2>
+            <div id="class-detail"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="edit-modal-title">Tambah/Edit Jadwal</h2>
+            <form id="schedule-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="course-name">Nama Mata Kuliah:</label>
+                    <input type="text" id="course-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-day">Hari:</label>
+                    <select id="course-day" required>
+                        <option value="">Pilih Hari</option>
+                        <option value="Monday">Senin</option>
+                        <option value="Tuesday">Selasa</option>
+                        <option value="Wednesday">Rabu</option>
+                        <option value="Thursday">Kamis</option>
+                        <option value="Friday">Jumat</option>
+                        <option value="Saturday">Sabtu</option>
+                        <option value="Sunday">Minggu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start-time">Jam Mulai:</label>
+                    <input type="time" id="start-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-time">Jam Selesai:</label>
+                    <input type="time" id="end-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="lecturer">Dosen:</label>
+                    <input type="text" id="lecturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="room">Ruangan:</label>
+                    <input type="text" id="room" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Catatan Tambahan:</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit">Simpan</button>
+                <button type="button" class="button-danger" id="delete-btn">Hapus</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="notification" id="reminder-notification"></div>
+
+
+<!-- JavaScript -->
+<script type="module" src="js/modules/data.js"></script>
+<script type="module" src="js/modules/utils.js"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>
