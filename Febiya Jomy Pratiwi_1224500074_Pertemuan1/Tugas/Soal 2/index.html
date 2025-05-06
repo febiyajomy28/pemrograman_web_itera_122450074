@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Dasar</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- Menggunakan Tailwind untuk styling sederhana -->
+</head>
+<body class="p-6 bg-gray-100 text-gray-800">
+
+    <h1 class="text-2xl font-bold mb-4">Tugas JavaScript 1</h1>
+    
+    <div id="result" class="mb-4 p-4 border border-gray-300 rounded bg-white"></div>
+
+    <hr>
+
+    <div class="event-demo p-4 my-4 border border-gray-300 rounded bg-white">
+        <h2 class="text-xl font-bold mb-3">Demo Event Handler</h2>
+
+        <!-- Input Nama -->
+        <input type="text" id="nama-input" placeholder="Masukkan nama kalian" class="border p-2 rounded w-full mb-3">
+        <button id="sapa-button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sapa Saya</button>
+        <div id="sapa-output" class="mt-3 text-lg font-semibold"></div>
+
+        <!-- Kalkulator Sederhana -->
+        <div class="mt-4">
+            <h3 class="font-semibold mb-2">Kalkulator Sederhana</h3>
+            <div class="flex gap-2 mb-3">
+                <input type="number" id="angka1" placeholder="Angka 1" class="border p-2 rounded flex-1">
+                <input type="number" id="angka2" placeholder="Angka 2 (Opsional)" class="border p-2 rounded flex-1">
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <button class="btn-kalkulator bg-green-500" data-op="tambah">+</button>
+                <button class="btn-kalkulator bg-yellow-500" data-op="kurang">-</button>
+                <button class="btn-kalkulator bg-purple-500" data-op="kali">×</button>
+                <button class="btn-kalkulator bg-red-500" data-op="bagi">÷</button>
+                <button class="btn-kalkulator bg-blue-500" data-op="pangkat">xⁿ</button>
+                <button class="btn-kalkulator bg-indigo-500" data-op="akar">√</button>
+                <button class="btn-kalkulator bg-gray-500" data-op="modulus">%</button>
+            </div>
+            <div id="hasil-kalkulator" class="mt-3 text-lg font-semibold"></div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan dengan file JavaScript -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
